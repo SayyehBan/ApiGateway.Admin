@@ -1,3 +1,5 @@
+using ApiGateway.Admin.Models.Links;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
 
@@ -14,6 +16,16 @@ builder.Configuration.SetBasePath(builder.Environment.ContentRootPath)
     .AddOcelot(builder.Environment)
     .AddEnvironmentVariables();
 
+var AuthenticationSchemeKey = "ApiGatewayAdminAuthenticationScheme";
+
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(AuthenticationSchemeKey, option =>
+    {
+        option.Authority = LinkServices.IdentityServer;
+        option.Audience = "apigatewayadmin";
+    });
+
+
 builder.Services.AddOcelot(builder.Configuration);
 var app = builder.Build();
 
@@ -26,7 +38,6 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.UseAuthorization();
 
 app.MapControllers();
 app.UseRouting();

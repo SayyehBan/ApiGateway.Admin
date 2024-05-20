@@ -6,7 +6,7 @@
       "AddQueriesToRequest": {},
       "AuthenticationOptions": {
         "AllowedScopes": [],
-        "AuthenticationProviderKey": null,
+        "AuthenticationProviderKey": "ApiGatewayAdminAuthenticationScheme",
         "AuthenticationProviderKeys": []
       },
       "ChangeDownstreamPathTemplate": {},
@@ -81,7 +81,7 @@
       "AddQueriesToRequest": {},
       "AuthenticationOptions": {
         "AllowedScopes": [],
-        "AuthenticationProviderKey": null,
+        "AuthenticationProviderKey": "ApiGatewayAdminAuthenticationScheme",
         "AuthenticationProviderKeys": []
       },
       "ChangeDownstreamPathTemplate": {},
@@ -154,7 +154,7 @@
       "AddQueriesToRequest": {},
       "AuthenticationOptions": {
         "AllowedScopes": [],
-        "AuthenticationProviderKey": null,
+        "AuthenticationProviderKey": "ApiGatewayAdminAuthenticationScheme",
         "AuthenticationProviderKeys": []
       },
       "ChangeDownstreamPathTemplate": {},
